@@ -8,3 +8,5 @@ Linux VM with:
 - Standard B1s SKU
 - Bind 9
 - Automatic Updates (reboot 02:00)
+- Microsoft signing key
+- Azure CLI APT Repository
