@@ -19,7 +19,7 @@ write_files:
   - path: /etc/bind/named.conf.options
     content: |
       #managed by cloud-init
-      #acl "all" {
+      #acl "netoworks" {
       #  192.168.0.0/16;
       #  10.1.1.0/24;
       #  localhost;
@@ -29,7 +29,8 @@ write_files:
       options {
               directory "/var/cache/bind";
 
-              #allow-query { all; };
+              #allow-query { networks; };
+              allow-query { any; };
               #allow-recursion { all; };
               #recursion yes;
               forward only;
