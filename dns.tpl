@@ -40,7 +40,7 @@ write_files:
               };
 
               dnssec-enable no;
-              dnssec-validation auto;
+              dnssec-validation no;
 
               auth-nxdomain no;    # conform to RFC1035
               listen-on-v6 { none; };
