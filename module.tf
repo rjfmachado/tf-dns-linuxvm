@@ -11,7 +11,7 @@ resource "azurerm_network_interface" "nic" {
 }
 
 data "template_file" "cloudconfig" {
-  template = fileexists(var.cloudconfig) ? file(var.cloudconfig) : file("${path.module}/${var.cloudconfig}")
+  template = fileexists(var.cloud-config) ? file(var.cloud-config) : file("${path.module}/${var.cloud-config}")
 }
 
 data "template_cloudinit_config" "config" {
