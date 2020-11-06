@@ -33,3 +33,9 @@ variable "cloud-config" {
   type    = string
   default = "dns.tpl"
 }
+
+variable "staticip" {
+  description = "If set to true, enable static ip"
+  default     = false
+  type        = bool
+}
