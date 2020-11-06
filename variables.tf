@@ -31,5 +31,5 @@ variable "subnetid" {
 
 variable "cloud-config" {
   type    = string
-  default = file("dns.tpl")
+  default = "dns.tpl"
 }
