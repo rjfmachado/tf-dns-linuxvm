@@ -11,7 +11,7 @@ resource "azurerm_network_interface" "nic" {
 }
 
 data "template_file" "cloudconfig" {
-  template = file("${path.module}/dns.tpl")
+  template = var.cloudconfig
 }
 
 data "template_cloudinit_config" "config" {

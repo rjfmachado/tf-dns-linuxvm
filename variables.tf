@@ -29,4 +29,7 @@ variable "storage_type" {
 variable "subnetid" {
 }
 
-
+variable "cloud-config" {
+  type    = string
+  default = file("${path.module}/dns.tpl")
+}
