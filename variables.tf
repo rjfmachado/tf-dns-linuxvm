@@ -26,17 +26,14 @@ variable "storage_type" {
   default = "Premium_LRS"
 }
 
+variable "subnetid" {
+}
+
+variable "ipaddress" {
+  type = string
+}
+
 variable "cloud-config" {
   type    = string
   default = "dns.tpl"
-}
-
-variable "ipconfiguration" {
-  type = object
-  default = {
-    name                          = "ipconfig-name"
-    subnet_id                     = "subnetid"
-    private_ip_address_allocation = "Dynamic"
-    #private_ip_address            = ""
-  }
 }
