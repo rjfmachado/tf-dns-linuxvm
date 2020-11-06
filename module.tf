@@ -3,11 +3,7 @@ resource "azurerm_network_interface" "nic" {
   location            = var.location
   resource_group_name = var.rg
 
-  ip_configuration {
-    name                          = "ipconfig-${var.name}"
-    subnet_id                     = var.subnetid
-    private_ip_address_allocation = var.staticip ? "Static" : "Dynamic"
-  }
+  ip_configuration = var.ipconfiguration
 }
 
 data "template_file" "cloudconfig" {

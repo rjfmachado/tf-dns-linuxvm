@@ -34,8 +34,11 @@ variable "cloud-config" {
   default = "dns.tpl"
 }
 
-variable "staticip" {
-  description = "If set to true, enable static ip"
-  default     = false
-  type        = bool
+variable "ipconfiguration" {
+  type = object
+  default = {
+    name                          = "ipconfig-${var.name}"
+    subnet_id                     = var.subnetid
+    private_ip_address_allocation = "Dynamic"
+  }
 }
