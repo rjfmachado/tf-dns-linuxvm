@@ -34,6 +34,7 @@ resource "azurerm_linux_virtual_machine" "vm" {
   network_interface_ids = [
     azurerm_network_interface.nic.id,
   ]
+  zone = var.zone
 
   custom_data = data.template_cloudinit_config.config.rendered
 

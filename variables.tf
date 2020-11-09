@@ -37,3 +37,8 @@ variable "cloud-config" {
   type    = string
   default = "dns.tpl"
 }
+
+variable "zone" {
+  type    = string
+  default = "1"
+}
