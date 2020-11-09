@@ -4,9 +4,10 @@ resource "azurerm_network_interface" "nic" {
   resource_group_name = var.rg
 
   ip_configuration {
-    name                          = "ipconfig-${var.name}"
-    subnet_id                     = var.subnetid
-    private_ip_address_allocation = "Static"
+    name      = "ipconfig-${var.name}"
+    subnet_id = var.subnetid
+
+    private_ip_address_allocation = var.staticip ? "Static" : "Dynamic"
     private_ip_address            = var.ipaddress
   }
 }

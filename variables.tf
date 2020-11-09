@@ -33,6 +33,11 @@ variable "ipaddress" {
   type = string
 }
 
+variable "staticip" {
+  type    = bool
+  default = true
+}
+
 variable "cloud-config" {
   type    = string
   default = "dns.tpl"
