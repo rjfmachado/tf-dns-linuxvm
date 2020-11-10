@@ -19,7 +19,7 @@ write_files:
   - path: /etc/bind/named.conf.options
     content: |
       #managed by cloud-init
-      #acl "netoworks" {
+      #acl "networks" {
       #  192.168.0.0/16;
       #  10.1.1.0/24;
       #  localhost;
