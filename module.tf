@@ -26,6 +26,10 @@ data "template_cloudinit_config" "config" {
   }
 }
 
+locals {
+  sshpublickey = var.sshkey == "" ? file("~/.ssh/id_rsa.pub") : var.sshkey
+}
+
 resource "azurerm_linux_virtual_machine" "vm" {
   name                = var.name
   resource_group_name = var.rg
@@ -41,7 +45,7 @@ resource "azurerm_linux_virtual_machine" "vm" {
 
   admin_ssh_key {
     username   = var.adminuser
-    public_key = file("~/.ssh/id_rsa.pub")
+    public_key = local.sshpublickey
   }
 
   disable_password_authentication = true

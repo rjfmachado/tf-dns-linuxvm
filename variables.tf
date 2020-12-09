@@ -11,6 +11,12 @@ variable "adminuser" {
   default = "ricardma"
 }
 
+variable "sshkey" {
+  type    = string
+  default = ""
+  //will load ~/.ssh/id_rsa.pub by default
+}
+
 variable "location" {
   type    = string
   default = "West Europe"
